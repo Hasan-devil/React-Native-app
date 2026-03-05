@@ -4,13 +4,13 @@ import {
   Text,
   StyleSheet,
   TextInput,
-  TouchableOpacity,
   ImageBackground,
   Alert,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BlurView } from "expo-blur";
 import { navigate } from "expo-router/build/global-state/routing";
+import Button from "@/components/Button"
 
 const [_uname,_pword] = ["Hasan","1234"]
 
@@ -23,14 +23,13 @@ const Index = () => {
     if (unameInput===_uname && pwordInput===_pword){
       console.log("Correct 👍");
       Alert.alert("You're wellcome")
-      
+      navigate('/landingpage')
     }
     else{
       console.log("get out of here ");
       Alert.alert("Get out of here 😡")
       navigate('/landingpage')
     }
-    //if (!btnActive) setBtnActive(true)
   }
   return (
     <View style={{ flex: 1 }}>
@@ -84,7 +83,13 @@ const Index = () => {
             onBlur={() => setFocusedInput("")}
             onChangeText={setPwordInput}
             value={pwordInput}
-            
+          />
+          <Button
+            text="Login"
+            backgroundColor="hsla(171, 56%, 75%, 0.67)"
+            activeColor="hsla(171, 69%, 76%, 0.93)"
+            onClick={handleClick}
+            style={styles.submit_btn}
           />
 
 
@@ -136,7 +141,6 @@ const styles = StyleSheet.create({
 
   submit_btn: {
     marginTop: 20,
-    backgroundColor: "hsla(171, 56%, 75%, 0.75)",
     borderWidth: 2,
     borderColor: "hsl(171, 58%, 52%)",
     paddingVertical: 10,
