@@ -10,25 +10,26 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { BlurView } from "expo-blur";
 import { navigate } from "expo-router/build/global-state/routing";
-import Button from "@/components/Button"
+import Button from "@/components/Button";
 
-const [_uname,_pword] = ["Hasan","1234"]
+const [_uname, _pword] = ["Hasan", "1234"];
+let isLoggedIn = false;
 
-const Index = () => {
+const Login = () => {
   const [focusedInput, setFocusedInput] = useState("");
-  const [unameInput,setUnameInput] = useState("");
-  const [pwordInput,setPwordInput] = useState("");
- // const [btnActive,setBtnActive] = useState(false);
+  const [unameInput, setUnameInput] = useState("");
+  const [pwordInput, setPwordInput] = useState("");
+  // const [btnActive,setBtnActive] = useState(false);
   function handleClick() {
-    if (unameInput===_uname && pwordInput===_pword){
+    if (unameInput === _uname && pwordInput === _pword) {
       console.log("Correct 👍");
-      Alert.alert("You're wellcome")
-      navigate('/landingpage')
-    }
-    else{
+      Alert.alert("You're wellcome");
+      isLoggedIn = true;
+      navigate("/landingpage");
+    } else {
       console.log("get out of here ");
-      Alert.alert("Get out of here 😡")
-      navigate('/landingpage')
+      Alert.alert("Get out of here 😡");
+      navigate("/landingpage");
     }
   }
   return (
@@ -63,7 +64,6 @@ const Index = () => {
             onBlur={() => setFocusedInput("")}
             onChangeText={setUnameInput}
             value={unameInput}
-            
           />
 
           <TextInput
@@ -75,8 +75,8 @@ const Index = () => {
               {
                 backgroundColor:
                   focusedInput === "password"
-                    ? "rgba(255, 255, 255, 0.7)" 
-                    :"rgba(255, 255, 255, 0.52)",
+                    ? "rgba(255, 255, 255, 0.7)"
+                    : "rgba(255, 255, 255, 0.52)",
               },
             ]}
             onFocus={() => setFocusedInput("password")}
@@ -91,7 +91,6 @@ const Index = () => {
             onClick={handleClick}
             style={styles.submit_btn}
           />
-
 
           {/* <TouchableOpacity style={styles.submit_btn} onPress={handleClick}>
             <Text style={styles.button_text}>Login</Text>
@@ -161,9 +160,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
   },
-
-
-
 });
 
-export default Index;
+export default Login;
+export { isLoggedIn };

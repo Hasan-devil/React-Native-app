@@ -5,25 +5,28 @@
 
 import { Platform } from 'react-native';
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+//sample bacvkground colors for the app.
 
+// Background      ->  #3A0005
+// Deep background ->  #240003
+// Surface         ->  #E6CDB3
+// Primary CTA     ->  #F4A548
+// Secondary       ->  #DD5570
+// Text light      ->  #FFF4EA
+ 
+ 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
-    tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
-    tabIconSelected: tintColorLight,
+    
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
-    tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
-    tabIconSelected: tintColorDark,
+    text: "#E0D0D0",
+    textStrong: "#ffb3b3",
+    bgPrimary: "#240003",
+    bgSecondary: "#3A0005",
+    accentPrimary: "#F4A548",
+    accentSecondary: "#DD5570",
+    surface: "#E6CDB3",
   },
 };
 
