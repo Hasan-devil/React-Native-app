@@ -11,8 +11,8 @@ import { Platform } from 'react-native';
 // Deep background ->  #240003
 // Surface         ->  #E6CDB3
 // Primary CTA     ->  #F4A548
-// Secondary       ->  #DD5570
-// Text light      ->  #FFF4EA
+// Secondary       ->  #DD5570 | #EC6A84
+// Text light      ->  #FFF4EA | #dec19c
  
  
 export const Colors = {
@@ -26,7 +26,7 @@ export const Colors = {
     bgSecondary: "#3A0005",
     accentPrimary: "#F4A548",
     accentSecondary: "#DD5570",
-    surface: "#E6CDB3",
+    surface: "#dec19c",
   },
 };
 
